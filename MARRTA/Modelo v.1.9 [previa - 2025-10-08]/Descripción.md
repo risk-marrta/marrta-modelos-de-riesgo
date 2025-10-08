@@ -1,6 +1,7 @@
 Los modelos USUARIO están con todas las defensas a cero y la columna "completado" a cero
-
 Los modelos BASE están con todas las defensas a uno y la columna "completado" a uno.
+
+Los ficheros excel son innecesarios, pero se incluyen por si pudieran ser útiles como ejemplo.
 
 # Notas:
 
