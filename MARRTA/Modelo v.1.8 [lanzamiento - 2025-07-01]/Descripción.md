@@ -1,30 +1,31 @@
-Los modelos USUARIO están con todas las defensas a cero y la columna "aplicable" a cero
+Los modelos USUARIO están con todas las defensas a cero y la columna "completado" a cero
 
-Los modelos BASE están con todas las defensas a uno y la columna "aplicable" a uno.
+Los modelos BASE están con todas las defensas a uno y la columna "completado" a uno.
 
-Notas:
+# Notas:
 
-- Los BASE se han generado con la siguiente consulta SQL
+	Los BASE se han generado con la siguiente consulta SQL
 
-	UPDATE suceso_iniciador
+```	UPDATE suceso_iniciador
 	SET
 		completado =1;
-
+	
 	UPDATE defensa
 	SET
 		activo =1;
+```
 
-Cambios:
 
-v1.9:
+# Cambios:
+
+## v1.9:
 
 - Corrección OR por ORT y RF por RFH
-- "COMPLETADO" cambiado a "aplicable", y puesto a 1 en la versión "base".
+- "COMPLETADO" cambiado a "aplicable", y puesto a 1 en la versión "base"
 - Bien implementados los conceptos "base" y "usuario"
 
-----
 
-v1.8:
+## v1.8:
 
 - Revisión oncólogo radioterápico (ORT) 
 
@@ -34,26 +35,24 @@ v1.8:
 - SIN-05. Seleccionar en el PC de tratamiento UN paciente erróneo.
 - TTD-18: “Fallo de algún elemento del equipo que implica errores dosimétricos y/o geométricos en la administración del tratamiento” (tal y como estaba redactado, el mismo, se refería al equipo, no al tratamiento)
 
-----
-
-v1.7:
+## v1.7:
 
 	- Unificación de siglas para radiofísico (RFH), oncólogo radioterápico (ORT) y órgano de riesgo (OR).
-1.	DEC-08 (8):
+- 1.	DEC-08 (8):
 
 a.	Cambiar título a:
 “Omitir situaciones especiales de cara al tratamiento tales como presencia de marcapasos, paciente embarazada o tratamiento previo.”
 b.	Eliminar BA-DEF-001. Privilegios con contraseña para tratar una sesión de verificación.
 c.	Añadir BA-DEC-001 Peer review interno de ORs
 
-2.	PLA-05 (42). No asignar o asignar incorrectamente el origen de coordenadas a partir de las marcas de TC.
+- 2.	PLA-05 (42). No asignar o asignar incorrectamente el origen de coordenadas a partir de las marcas de TC.
 a.	eliminar BA-PLA-005
 b.	añadir BA-PLA-004
 
-3.	PLA-10 (47). Planificar incorrectamente por uso de parámetros no adecuados.
+- 3.	PLA-10 (47). Planificar incorrectamente por uso de parámetros no adecuados.
 a.	eliminar BA-PLA-005 Evaluación conjunta del nuevo plan dosimétrico por parte del ORT y el RFH
 
-4.	Me da la sensación de que la BA-PLA-005 se ha añadido en algunos SI de planificación pensando que pueden volver a ocurrir si se replanifica, pero en ese caso, lo que se debe recomendar es que hay que revisar todo el plan nuevamente de la misma manera que si fuera un plan nuevo de otro paciente.  Revisar dónde está aplicado BA-PLA-005
+- 4.	Me da la sensación de que la BA-PLA-005 se ha añadido en algunos SI de planificación pensando que pueden volver a ocurrir si se replanifica, pero en ese caso, lo que se debe recomendar es que hay que revisar todo el plan nuevamente de la misma manera que si fuera un plan nuevo de otro paciente.  Revisar dónde está aplicado BA-PLA-005
 
 La BA-PLA-005 está asociada en el modelo a los sucesos:
 -	(40) PLA-03 No reflejar en la prescripción clínica definitiva los cambios respecto a la Prescripción Provisional (dosis total, fraccionamiento, etc.).
@@ -62,50 +61,50 @@ La BA-PLA-005 está asociada en el modelo a los sucesos:
 -	(82) SIN-23 Incorporar incorrectamente la modificación del plan de tratamiento tras aprobarse un cambio.
 Correcto.
 
-5.	BA-DEL-001 
+- 5.	BA-DEL-001 
 a.	Cambiar título a ““Verificaciones durante la delineación de volúmenes y órganos de riesgo por parte del OR o TSRTyD”)”
 b.	En la descripción añadir ““estas revisiones pueden incluir espesor de corte adecuado, presencia de artefactos, etc.”
 
-6.	SI DEC-04 
+- 6.	SI DEC-04 
 a.	Cambiar título a ““Omitir o indicar incorrectamente en la ficha de tratamiento los límites de dosis de órganos de riesgo considerados en la intención terapéutica”
-7.	PLA-03 (40). No reflejar en la prescripción clínica definitiva los cambios respecto a la prescripción provisional (dosis total, fraccionamiento, etc.).
+- 7.	PLA-03 (40). No reflejar en la prescripción clínica definitiva los cambios respecto a la prescripción provisional (dosis total, fraccionamiento, etc.).
 a.	Añadir BA-DEC-001 Peer review interno de ORs
 b.	Añadir BA-DEC-002 Comparación automática de los datos introducidos con el protocolo de planificación
 c.	Añadir RF-DEC-001 Protocolos clínicos
 d.	Incluir BA-DEC-002 Comparación automática de los datos introducidos con el protocolo de planificación 
 e.	Incluir BA-PLA-001 Revisión previa a la planificación de los datos de prescripción y simulación 
-8.	PLA-07 (44). No corregir o corregir incorrectamente la densidad de heterogeneidades.
+- 8.	PLA-07 (44). No corregir o corregir incorrectamente la densidad de heterogeneidades.
 a.	Pasar a consecuencias medias.
-9.	PLA-11 (48). Delimitar erróneamente el rango de números CT del paciente.
+- 9.	PLA-11 (48). Delimitar erróneamente el rango de números CT del paciente.
 a.	Añadir BA-DEV-001 Lista de chequeo con este parámetro
-10.	PLA-14 (51). Cometer un error al tener en cuenta, en la optimización, la distribución de dosis de una fase o tratamiento previo.
+- 10.	PLA-14 (51). Cometer un error al tener en cuenta, en la optimización, la distribución de dosis de una fase o tratamiento previo.
 a.	Eliminar la B de lista de chequeo
 b.	Añadir una B de existencia de protocolos de planificación para tener en cuenta tratamientos anteriores. Creo que no existe, comprobar. RF-PLA-001 Protocolos de planificación.
-11.	PLA-17 (54). Incorporar incorrectamente un cambio en la dosimetría después de que ésta ya había sido aprobada.
+- 11.	PLA-17 (54). Incorporar incorrectamente un cambio en la dosimetría después de que ésta ya había sido aprobada.
 a.	Cambiar a frecuencia baja.
-12.	PLA-18 (55). Aprobar un plan de tratamiento distinto al escogido conjuntamente por el OR y el RFH.
+- 12.	PLA-18 (55). Aprobar un plan de tratamiento distinto al escogido conjuntamente por el OR y el RFH.
 a.	Añadir un RF de Etiquetar de forma clara por parte del OR el plan aceptado. RF-LOC-008 Etiquetar de forma clara por parte del ORT el estudio correcto para planificación.
 b.	Añadir RF-DEV-001 carga de trabajo
 c.	Añadir RF-DEV-002 trabajo propiciando concentración
-13.	SIN-11 (70). Desviación de la alineación de los láseres.
+- 13.	SIN-11 (70). Desviación de la alineación de los láseres.
 a.	Añadir BA-DEF-005 Enclavamiento debido a un error en la posición dela mesa de tratamiento. (Habría que añadir en la descripción que sólo aplica si la posición de la mesa se ha definido en una etapa previa)
-14.	SIN-23 (82). Incorporar incorrectamente la modificación del plan de tratamiento tras aprobarse un cambio.
+- 14.	SIN-23 (82). Incorporar incorrectamente la modificación del plan de tratamiento tras aprobarse un cambio.
 a.	Incluir BA-PLA-02 Cálculo independiente de la dosimetría
 b.	Incluir BA-VER-001 Verificación dosimétrica post-planificación y de toda modificación del mismo
-15.	VER-04 (59), Modificación incorrecta del plan inicial considerando los resultados de una verificación pre-tratamiento incorrectamente realizada.
+- 15.	VER-04 (59), Modificación incorrecta del plan inicial considerando los resultados de una verificación pre-tratamiento incorrectamente realizada.
 a.	Incluir BA-PLA-02 Cálculo independiente de la dosimetría
 b.	Incluir BA-VER-001 Verificación dosimétrica post-planificación y de toda modificación del mismo
-16.	TTD28 (110). Movimiento significativo (observable) del paciente, de forma voluntaria o involuntaria.
+- 16.	TTD28 (110). Movimiento significativo (observable) del paciente, de forma voluntaria o involuntaria.
 a.	Incluir RF-TTD-01, modificando descripción a “Procedimiento por el que se establece la presencia continua de dos TSRTyDs en máquina que permite la vigilancia redundante del tratamiento, revisando continuamente los parámetros de tratamiento, cámaras de televisión e interfono.”
-17.	TTD-21 (103)
+- 17.	TTD-21 (103)
 a.	Añadir el RC-DEV-001
 
-v1.6:
+## v1.6:
 
 	- Corrección de erratas.
 	- Cambiar nombre y descripción de RC-DEV-001 "Revisión médica y/o de enfermería semanal del paciente que puede detectar errores en la administración del tratamiento, o en las etapas previas." a "Revisión médica y/o de enfermería periódica del paciente que puede detectar errores en la administración del tratamiento, o en las etapas previas."
 
-v1.5:
+## v1.5:
 
 	- Correcciones Sheila 
 		Sucesos
@@ -129,7 +128,7 @@ v1.5:
 		RF-PLA-006 cambiar OAR por "órganos de riesgo"
 		BA-DEC-002 cambiar OR por "órganos de riesgo"
 
-v1.4:
+## v1.4:
 
 	- Correcciones Carlos:
 		BA-DEC-001.  Descripción.  Creo que sobra "de la propia instalación", creo que no aporta nada y mi me despistaba.
@@ -232,9 +231,7 @@ v1.4:
 
 		PROPUESTA: Eliminar BA-DEF-006 de VER-02 (es decir, si se acepta la anterior, en este SI no aparecerían ni BA-DEF-006 ni BA-DEF-007)
 
-----
-
-v1.3:
+## v1.3:
 
 	- Corrección orden de SI.
 	- Correcciones Carlos:
@@ -247,7 +244,7 @@ v1.3:
 			Respecto a RC-TTD-002 aplica además de a PLA-12 y VER-01 a PLA-05, PLA-06 y PLA-07 por lo que no se eliminaría el reductor. Si lo he entendido bien sería añadir RC-TTD-003 y RC-TTD-009 a PLA-12 y VER-01, eliminando RC-TTD-002 de ambos, no? sí
 			En PLA-05 (origen de coordenadas), PLA-06 (absorción de la mesa) creo que aplicaría RC-TTD03 (Evaluación de la dosimetría sobre la imagen de CBCT).  A PLA-07 (heterogeneidades) aplicaría RC-TTD03 (Evaluación de la dosimetría sobre la imagen de CBCT) y RC-TTD-009 (Sistema de monitorización del tratamiento con medidas de fluencia), con lo que desaparecería RC-TTD-002 del modelo (no me parece creíble que detecte un problema de dosimetría en un tratamiento avanzado con un sistema de dosimetría tradicional.  A PLA-05 y PLA-06 no le pongo el RC-TTD-009 porque si el sistema es antes del paciente no lo detecta y si es después es probable que no sea suficientemente sensible.
 
-v1.2:
+## v1.2:
 
 	- Corrección orden de SI.
 	- Correcciones Carlos:
@@ -293,8 +290,6 @@ v1.2:
 		Código MARRTA TTD-09, Descripción: cambiar "Desviación de alguno de los punteros láser." por "Desviación de la alineación de los láseres."
 		Código MARRTA TTD-X1, Descripción: cambiar "Se asume que este error afectaría al desarrollo de todo el tratamiento del paciente." por "Se asume que este error afectaría solamente a una sesión de tratamiento de un paciente."
 
-----
-
-v1.1:
+## v1.1:
 	- Corregida una barrera que aparecía dos veces en DEC-03.
 	- Corregido el título de BA-SIN-009 que aparecía con un retorno de carro como primer carácter.
