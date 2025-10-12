@@ -19,6 +19,10 @@ Los ficheros excel son innecesarios, pero se incluyen por si pudieran ser útile
 
 # Cambios:
 
+## v2.0:
+
+- Corrección de la definición de una barrrera BA-VER-004
+
 ## v1.9:
 
 - Corrección OR por ORT y RF por RFH
