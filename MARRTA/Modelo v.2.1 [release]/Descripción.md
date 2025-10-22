@@ -22,6 +22,7 @@ Los ficheros excel son innecesarios, pero se incluyen por si pudieran ser útile
 ## v2.1:
 
 - Corrección a la lista de analistas, e inclusión de enlaces de la documentación soporte MARRTA
+- Corrección de reductores duplicados
 
 ## v2.0:
 
