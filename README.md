@@ -1,4 +1,4 @@
-**v2.1 [versión final del modelo MARRTA] - v2.1_en [final version of the MARRTA model]**
+**v2.2 [bugfix] - v2.2_en [bugfix]**
 
 Los modelos USUARIO están con todas las defensas a cero y la columna "aplicable" a cero
 Los modelos BASE están con todas las defensas a uno y la columna "aplicable" a uno.
@@ -7,7 +7,14 @@ _Los ficheros excel son innecesarios, pero se incluyen por si pudieran ser útil
 
 Cambios:
 
-- v2.1:
+# Cambios:
+
+## v2.2 (2016/01/26):
+
+- "Limpieza" de nombres y descripciones de algunas defensas ("trailing spaces", dobles espacios y tabuladores) que causaban errores en el programa
+
+## v2.1:
+
 -- Corrección a la lista de analistas, e inclusión de enlaces de la documentación soporte MARRTA
 -- Correción de reductores duplicados
 -- Añadido modelo en inglés
@@ -17,12 +24,15 @@ Cambios:
 The USER models have all defenses set to zero and the “applicable” column set to zero.
 The BASE models have all defenses set to one and the “applicable” column set to one.
 
-Changes:
+# Changes:
 
-- v2.1:
+## v2.2 (2026-01-26)
+
+-- “Cleanup” of the names and descriptions of some defenses (removal of trailing spaces, double spaces, and tab characters) that were causing errors in the program.
+
+## v2.1:
 -- Correction to the list of analysts, and inclusion of links to the MARRTA supporting documentation
 -- Correction of duplicated reducers
--- Added model in English
 
 -----------------------------
 
